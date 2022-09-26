@@ -1,8 +1,12 @@
-from functions import *
+from flask import Blueprint, jsonify, session, render_template, request
+
+from functions import get_all_post, new_logger, get_post_by_pk, get_comments_by_post_id, search_for_posts, \
+    get_posts_by_user, write_to_json
+
 loader_blueprint = Blueprint('loader_blueprint', __name__)
 main_page = Blueprint('main_page', __name__)
 ALLOWED_EXTENSIONS = {'jpeg', 'png', 'jpg', 'gif'}
-app = Flask(__name__)
+
 
 
 @loader_blueprint.route("/api/post/")
