@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKYPROGRAM post</title>
+  <link href="/static/styles.min.css" rel="stylesheet">
+</head>
+<body>
+ <header class="container header">
+     <div class="header__wrapper"></div>
+      <a href="/" class="header__btn-back">
+      </a>
+     <div class="reg">
+         <p class="header__logo">Регистрация</p>
+        <form action="/reg/" method="get" >
+            <input type="text" name="name_user" class="search__input">
+            <br>
+            <input type="password" name="pass" class="search__input">
+            <br>
+            <button type="submit" class="search__input">Register</button>
+        </form>
+         <p>Уже есть аккаунт?<a href="/auth/">Войти</a></p>
+    </div>
+ </header>
+</body>
+</html>
