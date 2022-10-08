@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    image: denisbubnov/hosting:v0.1.0
+    ports:
+      - "80:80"
+    environment:
+      - DB_PASSWORD=docker_app
+      - DB_USER=docker_app
+      - DB_NAME=docker_app
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=docker_app
+      - POSTGRES_USER=docker_app
+      - POSTGRES_NAME=docker_app

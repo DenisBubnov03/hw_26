@@ -10,11 +10,12 @@
 # from flask import render_template
 #
 # from functions import new_logger
+
+
 from utils import create_app
 
 app = create_app()
 
-#
 # @app.errorhandler(404)
 # @app.errorhandler(json.JSONDecodeError)
 # @app.errorhandler(FileNotFoundError)
@@ -33,4 +34,4 @@ app = create_app()
 
 
 if __name__ == "__main__":
-    app.run(25000)
+    app.run()

@@ -1,0 +1,1 @@
+SQLALCHEMY_DATABASE_URI= "postgresql://docker_app:docker_app@pg/docker_app"

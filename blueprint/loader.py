@@ -8,7 +8,6 @@ main_page = Blueprint('main_page', __name__)
 ALLOWED_EXTENSIONS = {'jpeg', 'png', 'jpg', 'gif'}
 
 
-
 @loader_blueprint.route("/api/post/")
 def all_post():
     """Вывод api страницы"""
@@ -43,8 +42,8 @@ def loader_page(pk):
     Переход на страницу /post/
     """
     comm = get_comments_by_post_id(pk)
-    get_post = get_post_by_pk(pk)
-    return render_template('post.html', post=get_post, comm=comm, len_com=len(comm))
+    get_posts = get_post_by_pk(pk)
+    return render_template('post.html', post=get_posts, comm=comm, len_com=len(comm))
 
 
 @loader_blueprint.route('/search/', methods=['GET'])
@@ -61,7 +60,7 @@ def search_page():
 
 @loader_blueprint.route('/user/<username>')
 def get_user(username):
-    """Вывод старинцы определенного пользователя"""
+    """Вывод страницы определенного пользователя"""
     post = get_posts_by_user(username)
     return render_template('user-feed.html', post=post)
 
@@ -86,7 +85,7 @@ def page_post_upload():
     if extension not in ALLOWED_EXTENSIONS:
         error += "format"
         new_logger.info("Неверный формат изображения")
-        return render_template("Error_log.html",  )
+        return render_template("Error_log.html", )
     if picture:
         picture.save(f"./uploads/images/{filename}")
         content = request.form['content']
